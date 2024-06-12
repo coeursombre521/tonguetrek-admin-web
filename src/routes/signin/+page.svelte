@@ -1,6 +1,9 @@
 <!-- src/routes/signin.svelte -->
-<script>
-  import { page } from '$app/stores';
+<script lang="ts">
+  import { goto } from '$app/navigation';
+  import type { AuthResult, LoginData } from '$lib/interfaces/api/login';
+  import { login } from '$lib/services/authService';
+  import { authAccessToken, authRefreshToken } from '$lib/services/authStoreService';
   import { writable } from 'svelte/store';
 
   let username = '';
@@ -8,21 +11,22 @@
   let error = writable('');
 
   const handleSignIn = async () => {
-      try {
-      // Dummy sign-in logic
-      if (username === 'user' && password === 'pass') {
-          const token = 'dummy-token'; // In real case, you'd get this from your backend
-          localStorage.setItem('authToken', token);
-          $error = '';
-          // Redirect to home page after successful sign-in
-          page.set({ url: '/' });
-      } else {
-          throw new Error('Invalid credentials');
-      }
-      } catch (e) {
+    try {
+      const data: LoginData = { username, password }
+      const response: AuthResult = await login(data);
+
+      authAccessToken.set(response.accessToken);
+      authRefreshToken.set(response.refreshToken);
+
+      $error = '';
+
+      goto('/');
+    }
+    catch (e: any) {
       $error = e.message;
-      }
-  };
+    }
+  }
+
 </script>
   
 <main>
