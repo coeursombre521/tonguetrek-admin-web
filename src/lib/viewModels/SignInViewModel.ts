@@ -21,6 +21,7 @@ export function createSignInViewModel() {
     signInResponseStore.set(response)
   
     console.log(response.body)
+    if (response instanceof ESuccess) console.log("YAY")
   }
 
   return {

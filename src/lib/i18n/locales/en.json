@@ -1,0 +1,11 @@
+{
+  "sign_in_title": "Sign in",
+  "sign_in_button": "Sign in",
+  "sign_in_description": "Sign in with your manager or superuser account to continue",
+  "sign_in_email_address_field": "Email address",
+  "sign_in_email_address_helper": "Your email address",
+  "sign_in_password_field": "Password",
+  "sign_in_password_helper": "Your password",
+  "sign_in_recover_1": "Forgot your credentials?",
+  "sign_in_recover_2": "Recover your account"
+}

@@ -1,0 +1,11 @@
+{
+  "sign_in_title": "Conectare",
+  "sign_in_button": "Conectare",
+  "sign_in_description": "Conectați-vă cu contul de manager sau superuser pentru a continua",
+  "sign_in_email_address_field": "Adresă de email",
+  "sign_in_email_address_helper": "Adresa dumneavoastră de email",
+  "sign_in_password_field": "Parolă",
+  "sign_in_password_helper": "Parola dumneavoastră asociat contului",
+  "sign_in_recover_1": "V-ați uitat credențialele?",
+  "sign_in_recover_2": "Recuperați-vă contul"
+}
